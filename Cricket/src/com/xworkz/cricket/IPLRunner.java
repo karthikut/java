@@ -14,6 +14,8 @@ public class IPLRunner {
 		team1.setNoofLostMATCH(26);
 		team1.setNoofWins(47);
 		team1.setTeamId("MI");
+		team1.setSponsor("idea");
+		
 		
 		IplTeamDTO team2= new IplTeamDTO();
 		team2.setCaptainName("jadeja");
@@ -21,6 +23,7 @@ public class IPLRunner {
 		team2.setNoofLostMATCH(38);
 		team2.setNoofWins(64);
 		team2.setTeamId("csk");
+		team2.setSponsor("byjus");
 		
 		IplTeamDTO team3= new IplTeamDTO();
 		team3.setCaptainName("faf du plesis");
@@ -28,6 +31,7 @@ public class IPLRunner {
 		team3.setNoofLostMATCH(21);
 		team3.setNoofWins(100);
 		team3.setTeamId("rcb");
+		team3.setSponsor("puma");
 		
 		IplTeamDTO team4= new IplTeamDTO();
 		team4.setCaptainName("samson");
@@ -35,6 +39,7 @@ public class IPLRunner {
 		team4.setNoofLostMATCH(15);
 		team4.setNoofWins(74);
 		team4.setTeamId("rr");
+		team4.setSponsor("adidas");
 		
 		IplTeamDTO team5= new IplTeamDTO();
 		team5.setCaptainName("kane");
@@ -42,6 +47,7 @@ public class IPLRunner {
 		team5.setNoofLostMATCH(36);
 		team5.setNoofWins(55);
 		team5.setTeamId("srh");
+		team5.setSponsor("voltas");
 		
 		IplTeamDTO team6= new IplTeamDTO();
 		team6.setCaptainName("hardik");
@@ -49,6 +55,7 @@ public class IPLRunner {
 		team6.setNoofLostMATCH(05);
 		team6.setNoofWins(12);
 		team6.setTeamId("gt");
+		team6.setSponsor("whirlpool");
 		
 		IplTeamDTO team7= new IplTeamDTO();
 		team7.setCaptainName("rahul");
@@ -56,6 +63,7 @@ public class IPLRunner {
 		team7.setNoofLostMATCH(45);
 		team7.setNoofWins(98);
 		team7.setTeamId("lst");
+		team7.setSponsor("LG");
 		
 		IplTeamDTO team8= new IplTeamDTO();
 		team8.setCaptainName("mayank");
@@ -63,6 +71,7 @@ public class IPLRunner {
 		team8.setNoofLostMATCH(15);
 		team8.setNoofWins(82);
 		team8.setTeamId("px1");
+		team8.setSponsor("nikon");
 		
 		IplTeamDTO team9= new IplTeamDTO();
 		team9.setCaptainName("rishab");
@@ -70,6 +79,7 @@ public class IPLRunner {
 		team9.setNoofLostMATCH(45);
 		team9.setNoofWins(75);
 		team9.setTeamId("dc");
+		team9.setSponsor("jsw");
 		
 		IplTeamDTO team10= new IplTeamDTO();
 		team10.setCaptainName("shreyas");
@@ -77,6 +87,7 @@ public class IPLRunner {
 		team10.setNoofLostMATCH(13);
 		team10.setNoofWins(58);
 		team10.setTeamId("kkn");
+		team10.setSponsor("tata");
 		
 		
 		IplTeamDTO team11= new IplTeamDTO();
@@ -86,6 +97,7 @@ public class IPLRunner {
 		team11.setNoofLostMATCH(14);
 		team11.setNoofWins(25);
 		team11.setTeamId("ap");
+		team11.setSponsor("samsung");
 		
 		IplTeamDTO team12= new IplTeamDTO();
 		team12.setCaptainName("karthik");
@@ -93,6 +105,7 @@ public class IPLRunner {
 		team12.setNoofLostMATCH(6);
 		team12.setNoofWins(57);
 		team12.setTeamId("pw");
+		team12.setSponsor("sony");
 		
 		IplTeamDTO team13= new IplTeamDTO();
 		team13.setCaptainName("brendon");
@@ -100,6 +113,7 @@ public class IPLRunner {
 		team13.setNoofLostMATCH(24);
 		team13.setNoofWins(89);
 		team13.setTeamId("kct");
+		team13.setSponsor("jio");
 		
 		IplTeamDTO team14= new IplTeamDTO();
 		team14.setCaptainName("warner");
@@ -107,6 +121,7 @@ public class IPLRunner {
 		team14.setNoofLostMATCH(3);
 		team14.setNoofWins(8);
 		team14.setTeamId("kt");
+		team14.setSponsor("aircel");
 		
 		IplTeamDAO teamDAO= new IplTeamDAOImplementation();
 		teamDAO.saveTeam(team1);
@@ -133,9 +148,13 @@ public class IPLRunner {
 		System.out.println(check1.getNoofLostMATCH());
 		
 		
+		castedteamDAO.saveMultiple(team10, team12);
+		 
+		castedteamDAO.updateSponsorByName("mumbai indians", "tata");
+		System.out.println(check.getSponsor());
 		
-		
-		
+		castedteamDAO.updateCaptainByName("mumbai indians", "dhoni");
+		System.out.println(check.getCaptainName());
 
 
 	}

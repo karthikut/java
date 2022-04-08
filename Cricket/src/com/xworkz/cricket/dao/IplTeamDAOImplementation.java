@@ -59,6 +59,49 @@ public class IplTeamDAOImplementation extends IplTeamDAO {
 		return null;
 		
 	}
+	
+	
+	public void saveMultiple(IplTeamDTO dto1, IplTeamDTO dto2) {
+		if(dto1!=null) {
+			this.saveTeam(dto1);
+		}
+		else {
+			System.out.println("first team which represents null so cant save it");
+		}
+		if(dto2!=null) {
+			this.saveTeam(dto2);
+		}
+		else {
+			System.out.println("second team which represents null so cant save it");
+	}
+		
+		
+		
+		
+		
+	}
+
+	public void updateSponsorByName(String name, String Sponsor) {
+		// TODO Auto-generated method stub
+		if(name==null && Sponsor==null) {
+			System.out.println("not passing the value");
+			return;
+		}
+		IplTeamDTO teamfound= this.findByName(name);
+		teamfound.setSponsor(Sponsor);
+	}
+		
+		public void updateCaptainByName(String name, String captain) {
+			// TODO Auto-generated method stub
+			if(name==null && captain==null) {
+				System.out.println("not passing the value");
+				return;
+			}
+			IplTeamDTO teamfound= this.findByName(name);
+			teamfound.setCaptainName(captain);;
+		
+		
+	}
 }
 
 	
